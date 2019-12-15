@@ -1,0 +1,558 @@
+
+<!DOCTYPE HTML>
+<html lang="ru" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>2.2 Декларативные эффекты · Redux-Saga Manual Ru</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="nfpk">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-comment/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="bazovie-ponyatiya/23-dispatchim-action-v-store.html" />
+    
+    
+    <link rel="prev" href="bazovie-ponyatiya/11-ispolzovanie-saga-helpers.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Введите условия поиска" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://www.gitbook.com/book/nfpk/redux-saga-ru" target="_blank" class="custom-link">Redux-Saga Manual Ru</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    1. Вступление
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="bazovie-ponyatiya.html">
+            
+                <a href="bazovie-ponyatiya.html">
+            
+                    
+                    2. Базовые Понятия
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="bazovie-ponyatiya/11-ispolzovanie-saga-helpers.html">
+            
+                <a href="bazovie-ponyatiya/11-ispolzovanie-saga-helpers.html">
+            
+                    
+                    2.1 Использование Saga Helpers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="12-deklarativnie-effekti.html">
+            
+                <a href="12-deklarativnie-effekti.html">
+            
+                    
+                    2.2 Декларативные эффекты
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="bazovie-ponyatiya/23-dispatchim-action-v-store.html">
+            
+                <a href="bazovie-ponyatiya/23-dispatchim-action-v-store.html">
+            
+                    
+                    2.3 Диспатчим action в Store
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="bazovie-ponyatiya/24-error-handling.html">
+            
+                <a href="bazovie-ponyatiya/24-error-handling.html">
+            
+                    
+                    2.4 Обработка ошибок
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="bazovie-ponyatiya/24-a-common-abstraction-effect.html">
+            
+                <a href="bazovie-ponyatiya/24-a-common-abstraction-effect.html">
+            
+                    
+                    2.5 Базовая абстракция: Effect
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="1.html">
+            
+                <a href="1.html">
+            
+                    
+                    3. Дополнительные концепции
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="31.html">
+            
+                <a href="31.html">
+            
+                    
+                    3.1 Получение будущих действий
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="32-ne-blokiruyuschie-vizovi.html">
+            
+                <a href="32-ne-blokiruyuschie-vizovi.html">
+            
+                    
+                    3.2 Не блокирующие вызовы
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="33-running-tasks-in-parallel.html">
+            
+                <a href="33-running-tasks-in-parallel.html">
+            
+                    
+                    3.3 Запуск тасков параллельно
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="34-zapusk-gonki-mezhdu-neskolkimi-effect-ami.html">
+            
+                <a href="34-zapusk-gonki-mezhdu-neskolkimi-effect-ami.html">
+            
+                    
+                    3.4 Запуск гонки между несколькими Effect-ами
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="sequencing-sagas-via-yield.html">
+            
+                <a href="sequencing-sagas-via-yield.html">
+            
+                    
+                    3.5 Последовательность Saga через yield*
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="36.html">
+            
+                <a href="36.html">
+            
+                    
+                    3.6 Составление Saga-ов
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="310-primeri-testirovaniya-sagas.html">
+            
+                <a href="310-primeri-testirovaniya-sagas.html">
+            
+                    
+                    3.10 Примеры тестирования Saga-ов
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="311-podklyuchenie-sagas-k-vneshnemu-vhoduvihodu.html">
+            
+                <a href="311-podklyuchenie-sagas-k-vneshnemu-vhoduvihodu.html">
+            
+                    
+                    3.11 Подключение Saga-ов к внешнему входу/выходу
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Опубликовано с помощью GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >2.2 Декларативные эффекты</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="declarative-effects">&#x414;&#x435;&#x43A;&#x43B;&#x430;&#x440;&#x430;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x435; &#x44D;&#x444;&#x444;&#x435;&#x43A;&#x442;&#x44B; </h1>
+<p>&#x412; <code>redux-saga</code>  &#x441;&#x430;&#x433;&#x438; &#x440;&#x435;&#x430;&#x43B;&#x438;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x44B; &#x441; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435;&#x43C; &#x444;&#x443;&#x43D;&#x43A;&#x446;&#x438;&#x439; &#x433;&#x435;&#x43D;&#x435;&#x440;&#x430;&#x442;&#x43E;&#x440;&#x43E;&#x432;. &#x427;&#x442;&#x43E;&#x431;&#x44B; &#x432;&#x44B;&#x440;&#x430;&#x437;&#x438;&#x442;&#x44C; &#x43B;&#x43E;&#x433;&#x438;&#x43A;&#x443; &#x441;&#x430;&#x433;&#x43E;&#x432;, &#x43C;&#x44B; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x44F; &#x43A;&#x43B;&#x44E;&#x447;&#x435;&#x432;&#x43E;&#x435;&#x43E; &#x441;&#x43B;&#x43E;&#x432;&#x43E; <code>yield</code> &#x438; &#x43F;&#x435;&#x440;&#x435;&#x434;&#x430;&#x435;&#x43C; &#x43F;&#x440;&#x43E;&#x441;&#x442;&#x44B;&#x435; &#x43E;&#x431;&#x44A;&#x435;&#x43A;&#x442;&#x44B; JavaScript &#x438;&#x437; &#x433;&#x435;&#x43D;&#x435;&#x440;&#x430;&#x442;&#x43E;&#x440;&#x430;. &#x41C;&#x44B; &#x43D;&#x430;&#x437;&#x44B;&#x432;&#x430;&#x435;&#x43C; &#x438;&#x445; &#x43E;&#x431;&#x44A;<em>&#x435;&#x43A;&#x442;&#x44B; Effects. </em> Effect  &#x44D;&#x442;&#x43E; &#x43F;&#x440;&#x43E;&#x441;&#x442;&#x43E;&#x439; &#x43E;&#x431;&#x44A;&#x435;&#x43A;&#x442;, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x439; &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x438;&#x442; &#x438;&#x43D;&#x444;&#x43E;&#x440;&#x43C;&#x430;&#x446;&#x438;&#x44E;, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x430;&#x44F; &#x434;&#x43E;&#x43B;&#x436;&#x43D;&#x430; &#x438;&#x43D;&#x442;&#x435;&#x440;&#x43F;&#x440;&#x435;&#x442;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C;&#x441;&#x44F; &#x441; &#x43F;&#x43E;&#x43C;&#x43E;&#x449;&#x44C;&#x44E; middleware. &#x412;&#x44B; &#x43C;&#x43E;&#x436;&#x435;&#x442;&#x435; &#x43F;&#x440;&#x43E;&#x441;&#x43C;&#x430;&#x442;&#x440;&#x438;&#x432;&#x430;&#x442;&#x44C; &#x44D;&#x444;&#x444;&#x435;&#x43A;&#x442;&#x44B;, &#x43A;&#x430;&#x43A; &#x438;&#x43D;&#x441;&#x442;&#x440;&#x443;&#x43A;&#x446;&#x438;&#x438; &#x432; middleware &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x435; &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x44F;&#x44E;&#x442; &#x43A;&#x430;&#x43A;&#x443;&#x44E;-&#x442;&#x43E; &#x43E;&#x43F;&#x435;&#x440;&#x430;&#x446;&#x438;&#x44E; (&#x432;&#x44B;&#x437;&#x43E;&#x432;&#x438;&#x442;&#x435; &#x43B;&#x44E;&#x431;&#x443;&#x44E; &#x430;&#x441;&#x438;&#x43D;&#x445;&#x440;&#x43E;&#x43D;&#x43D;&#x443;&#x44E; &#x444;&#x443;&#x43D;&#x43A;&#x446;&#x438;&#x44E; &#x438; &#x434;&#x438;&#x441;&#x43F;&#x430;&#x447;&#x43D;&#x438;&#x442;&#x435; &#x435;&#x451; &#x432; &#x432;&#x430;&#x448; Store).</p>
+<p>&#x427;&#x442;&#x43E;&#x431;&#x44B; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x442;&#x44C; effects, &#x432;&#x44B; &#x43C;&#x43E;&#x436;&#x435;&#x442;&#x435; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x442;&#x435; &#x444;&#x443;&#x43D;&#x43A;&#x446;&#x438;&#x438; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x435; &#x43D;&#x430;&#x445;&#x43E;&#x434;&#x44F;&#x442;&#x441;&#x44F; &#x432; &#x43F;&#x430;&#x43A;&#x435;&#x442;&#x435; <code>redux-saga/effects</code>.</p>
+<p>&#x412; &#x44D;&#x442;&#x43E;&#x43C; &#x440;&#x430;&#x437;&#x434;&#x435;&#x43B;&#x435; &#x438; &#x43D;&#x438;&#x436;&#x435; &#x43C;&#x44B; &#x440;&#x430;&#x441;&#x43A;&#x430;&#x436;&#x435;&#x43C; &#x43E;&#x431; &#x43E;&#x441;&#x43D;&#x43E;&#x432;&#x43D;&#x44B;&#x445; Effects-&#x430;&#x445;. &#x418; &#x440;&#x430;&#x441;&#x441;&#x43C;&#x43E;&#x442;&#x440;&#x438;&#x43C;, &#x43A;&#x430;&#x43A; &#x44D;&#x442;&#x430; &#x43A;&#x43E;&#x43D;&#x446;&#x435;&#x43F;&#x446;&#x438;&#x44F; &#x43F;&#x43E;&#x437;&#x432;&#x43E;&#x43B;&#x44F;&#x435;&#x442; &#x43B;&#x435;&#x433;&#x43A;&#x43E; &#x442;&#x435;&#x441;&#x442;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x442;&#x44C; &#x432;&#x430;&#x448;&#x438;&#x438; &#x441;&#x430;&#x433;&#x438;.</p>
+<p>&#x421;&#x430;&#x433;&#x438; &#x43C;&#x43E;&#x433;&#x443;&#x442; &#x43E;&#x442;&#x434;&#x430;&#x432;&#x430;&#x442;&#x44C; Effect &#x432; &#x43D;&#x435;&#x441;&#x43A;&#x43E;&#x43B;&#x44C;&#x43A;&#x438;&#x445; &#x444;&#x43E;&#x440;&#x43C;&#x430;&#x445;. &#x421;&#x430;&#x43C;&#x44B;&#x439; &#x43F;&#x440;&#x43E;&#x441;&#x442;&#x43E;&#x439; &#x441;&#x43F;&#x43E;&#x441;&#x43E;&#x431; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x44F; &#x43A;&#x43B;&#x44E;&#x447;&#x438;&#x432;&#x43E;&#x435; &#x441;&#x43B;&#x43E;&#x432;&#x43E; <code>yield</code> &#x432;&#x435;&#x440;&#x43D;&#x443;&#x442;&#x44C; <code>Promise</code>.</p>
+<p>&#x41D;&#x430;&#x43F;&#x440;&#x438;&#x43C;&#x435;&#x440;, &#x43F;&#x440;&#x435;&#x434;&#x43F;&#x43E;&#x43B;&#x43E;&#x436;&#x438;&#x43C;, &#x447;&#x442;&#x43E; &#x443; &#x43D;&#x430;&#x441; &#x435;&#x441;&#x442;&#x44C; &#x441;&#x430;&#x433;&#x430;, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x430;&#x44F; &#x441;&#x43B;&#x435;&#x434;&#x438;&#x442; &#x437;&#x430; action <code>PRODUCT_REQUESTED</code>. &#x41F;&#x440;&#x438; &#x43A;&#x430;&#x436;&#x434;&#x43E;&#x43C; &#x434;&#x438;&#x441;&#x43F;&#x430;&#x442;&#x447;&#x435;  action <code>PRODUCT_REQUESTED</code>,   &#x437;&#x430;&#x43F;&#x443;&#x441;&#x43A;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x437;&#x430;&#x434;&#x430;&#x447;&#x430; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x430;&#x44F; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x430;&#x435;&#x442; &#x441;&#x43F;&#x438;&#x441;&#x43E;&#x43A; &#x43F;&#x440;&#x43E;&#x434;&#x443;&#x43A;&#x442;&#x43E;&#x432; &#x441; &#x441;&#x435;&#x440;&#x432;&#x435;&#x440;&#x430;.</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { takeEvery } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;redux-saga/effects&apos;</span>
+<span class="hljs-keyword">import</span> Api <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./path/to/api&apos;</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">fetchProducts</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> products = <span class="hljs-keyword">yield</span> Api.fetch(<span class="hljs-string">&apos;/products&apos;</span>)
+  <span class="hljs-built_in">console</span>.log(products)
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">watchFetchProducts</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">yield</span> takeEvery(<span class="hljs-string">&apos;PRODUCTS_REQUESTED&apos;</span>, fetchProducts)
+}
+</code></pre>
+<p>&#x412; &#x43F;&#x440;&#x438;&#x432;&#x435;&#x434;&#x435;&#x43D;&#x43D;&#x43E;&#x43C; &#x432;&#x44B;&#x448;&#x435; &#x43F;&#x440;&#x438;&#x43C;&#x435;&#x440;&#x435; &#x43C;&#x44B; &#x432;&#x44B;&#x437;&#x44B;&#x432;&#x430;&#x435;&#x43C; <code>Api.fetch</code> &#x43D;&#x435;&#x43F;&#x43E;&#x441;&#x440;&#x435;&#x434;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E; &#x438;&#x437;&#x43D;&#x443;&#x442;&#x440;&#x438; &#x433;&#x435;&#x43D;&#x435;&#x440;&#x430;&#x442;&#x43E;&#x440;&#x430; (&#x432; &#x444;&#x443;&#x43D;&#x43A;&#x446;&#x438;&#x44F;&#x445; &#x433;&#x435;&#x43D;&#x435;&#x440;&#x430;&#x442;&#x43E;&#x440;&#x430;&#x445;, &#x43B;&#x44E;&#x431;&#x43E;&#x435; &#x432;&#x44B;&#x440;&#x430;&#x436;&#x435;&#x43D;&#x438;&#x435; &#x441;&#x43F;&#x440;&#x430;&#x432;&#x430; &#x43E;&#x442; <code>yield</code> &#x432;&#x44B;&#x447;&#x438;&#x441;&#x43B;&#x44F;&#x435;&#x442;&#x441;&#x44F;, &#x438; &#x442;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; &#x43F;&#x43E;&#x442;&#x43E;&#x43C; &#x43E;&#x442;&#x434;&#x430;&#x435;&#x442;&#x441;&#x44F;).</p>
+<p><code>Api.fetch(&apos;/products&apos;)</code>&#x437;&#x430;&#x43F;&#x443;&#x441;&#x43A;&#x430;&#x435;&#x442; AJAX-&#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441; &#x438; &#x432;&#x43E;&#x437;&#x432;&#x440;&#x430;&#x449;&#x430;&#x435;&#x442; <strong>Promise </strong> that will resolve with the resolved response, the AJAX request will be executed immediately.</p>
+<p>&#x41F;&#x440;&#x43E;&#x441;&#x442;&#x43E;, &#x43D;&#x43E;...</p>
+<p>&#x41F;&#x440;&#x435;&#x434;&#x43F;&#x43E;&#x43B;&#x43E;&#x436;&#x438;&#x43C;, &#x43C;&#x44B; &#x445;&#x43E;&#x442;&#x438;&#x43C; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x442;&#x44C; &#x442;&#x435;&#x441;&#x442; &#x434;&#x43B;&#x44F; &#x433;&#x435;&#x43D;&#x435;&#x440;&#x430;&#x442;&#x43E;&#x440; &#x432;&#x44B;&#x448;&#x435;:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> iterator = fetchProducts()
+assert.deepEqual(iterator.next().value, ??) <span class="hljs-comment">// &#x447;&#x442;&#x43E; &#x43C;&#x44B; &#x43E;&#x436;&#x438;&#x434;&#x430;&#x435;&#x43C;?</span>
+</code></pre>
+<p>&#x41C;&#x44B; &#x445;&#x43E;&#x442;&#x438;&#x43C; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x438;&#x442;&#x44C; &#x440;&#x435;&#x437;&#x443;&#x43B;&#x44C;&#x442;&#x430;&#x442; &#x43F;&#x435;&#x440;&#x432;&#x43E;&#x433;&#x43E; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x44F;, &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x43D;&#x43E;&#x433;&#x43E; &#x438;&#x437; &#x433;&#x435;&#x43D;&#x435;&#x440;&#x430;&#x442;&#x43E;&#x440;&#x430;. &#x412; &#x43D;&#x430;&#x448;&#x435;&#x43C; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x435; &#x44D;&#x442;&#x43E; &#x440;&#x435;&#x437;&#x443;&#x43B;&#x44C;&#x442;&#x430;&#x442; &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D;&#x438;&#x44F; <code>Api.fetch(&apos;/products&apos;)</code>, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x439; &#x44F;&#x432;&#x43B;&#x44F;&#x435;&#x442;&#x441;&#x44F; Promise-&#x43E;&#x43C;.</p>
+<p>&#x412;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D;&#x438;&#x435; &#x440;&#x435;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x433;&#x43E; &#x441;&#x435;&#x440;&#x432;&#x438;&#x441;&#x430; &#x432;&#x43E; &#x432;&#x440;&#x435;&#x43C;&#x44F; &#x442;&#x435;&#x441;&#x442;&#x43E;&#x432; &#x43D;&#x435; &#x44F;&#x432;&#x43B;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x43D;&#x438; &#x436;&#x438;&#x437;&#x43D;&#x435;&#x441;&#x43F;&#x43E;&#x441;&#x43E;&#x431;&#x43D;&#x44B;&#x43C;, &#x43D;&#x438; &#x43F;&#x440;&#x430;&#x43A;&#x442;&#x438;&#x447;&#x435;&#x441;&#x43A;&#x438;&#x43C; &#x43F;&#x43E;&#x434;&#x445;&#x43E;&#x434;&#x43E;&#x43C;, &#x43F;&#x43E;&#x44D;&#x442;&#x43E;&#x43C;&#x443; &#x43F;&#x440;&#x438;&#x445;&#x43E;&#x434;&#x438;&#x442;&#x441;&#x44F; &#x43C;&#x43E;&#x43A;&#x430;&#x442;&#x44C; &#x440;&#x435;&#x437;&#x443;&#x43B;&#x44C;&#x442;&#x430;&#x442; &#x444;&#x443;&#x43D;&#x43A;&#x446;&#x438;&#x438; <code>Api.fetch</code> , &#x442;. &#x435;. &#x43C;&#x44B; &#x434;&#x43E;&#x43B;&#x436;&#x43D;&#x44B; &#x437;&#x430;&#x43C;&#x435;&#x43D;&#x438;&#x442;&#x44C; &#x440;&#x435;&#x430;&#x43B;&#x44C;&#x43D;&#x44B;&#x435; &#x444;&#x443;&#x43D;&#x43A;&#x446;&#x438;&#x438; &#x444;&#x435;&#x439;&#x43A;&#x43E;&#x432;&#x44B;&#x43C;&#x438;, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x430;&#x44F; &#x43D;&#x430; &#x441;&#x430;&#x43C;&#x43E;&#x43C; &#x434;&#x435;&#x43B;&#x435; &#x43D;&#x435; &#x434;&#x435;&#x43B;&#x430;&#x44E;&#x442; AJAX-&#x437;&#x430;&#x43F;&#x440;&#x43E;&#x441;, &#x430; &#x442;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x44F;&#x435;&#x442;, &#x447;&#x442;&#x43E; <code>Api.fetch</code> &#x441; &#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x43C;&#x438; &#x430;&#x440;&#x433;&#x443;&#x43C;&#x435;&#x43D;&#x442;&#x430;&#x43C;&#x438; (<code>&apos;/products&apos;</code> &#x432; &#x43D;&#x430;&#x448;&#x435;&#x43C; &#x441;&#x43B;&#x443;&#x447;&#x430;&#x435;).</p>
+<p>&#x41C;&#x43E;&#x43A;&#x438; &#x434;&#x435;&#x43B;&#x430;&#x44E;&#x442; &#x442;&#x435;&#x441;&#x442;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435; &#x431;&#x43E;&#x43B;&#x435;&#x435; &#x441;&#x43B;&#x43E;&#x436;&#x43D;&#x44B;&#x43C; &#x438; &#x43C;&#x435;&#x43D;&#x435;&#x435; &#x43D;&#x430;&#x434;&#x435;&#x436;&#x43D;&#x44B;&#x43C;. &#x421; &#x434;&#x440;&#x443;&#x433;&#x43E;&#x439; &#x441;&#x442;&#x43E;&#x440;&#x43E;&#x43D;&#x44B;, &#x444;&#x443;&#x43D;&#x43A;&#x446;&#x438;&#x438; &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x430;&#x44F; &#x43F;&#x440;&#x43E;&#x441;&#x442;&#x43E; &#x432;&#x43E;&#x437;&#x432;&#x440;&#x430;&#x449;&#x430;&#x44E;&#x442; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x44F; &#x43B;&#x435;&#x433;&#x447;&#x435; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x438;&#x442;&#x44C;, &#x442;&#x430;&#x43A; &#x43A;&#x430;&#x43A; &#x43C;&#x44B; &#x43C;&#x43E;&#x436;&#x435;&#x43C; &#x43F;&#x440;&#x43E;&#x441;&#x442;&#x443;&#x44E; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x44C;  <code>equal()</code>, &#x447;&#x442;&#x43E;&#x431;&#x44B; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x438;&#x442;&#x44C; &#x440;&#x435;&#x437;&#x443;&#x43B;&#x44C;&#x442;&#x430;&#x442;.</p>
+<p>&#x42D;&#x442;&#x43E; &#x441;&#x43F;&#x43E;&#x441;&#x43E;&#x431; &#x43F;&#x43E;&#x437;&#x432;&#x43E;&#x43B;&#x44F;&#x435;&#x442; &#x43D;&#x430;&#x43F;&#x438;&#x441;&#x430;&#x442;&#x44C; &#x441;&#x430;&#x43C;&#x44B;&#x435; &#x43D;&#x430;&#x434;&#x435;&#x436;&#x43D;&#x44B;&#x435; &#x442;&#x435;&#x441;&#x442;&#x44B;.</p>
+<p>&#x41D;&#x435; &#x432;&#x435;&#x440;&#x438;&#x442;&#x435;? &#x421;&#x43E;&#x432;&#x435;&#x442;&#x443;&#x44E; &#x432;&#x430;&#x43C; &#x43F;&#x440;&#x43E;&#x447;&#x438;&#x442;&#x430;&#x442;&#x44C; <a href="https://medium.com/javascript-scene/what-every-unit-test-needs-f6cd34d9836d#.4ttnnzpgc" target="_blank">Eric Elliott&apos;s article</a>:</p>
+<blockquote>
+<p>(...)<code>equal()</code>, by nature answers the two most important questions every unit test must answer, but most don&#x2019;t:</p>
+<ul>
+<li>What is the actual output?</li>
+<li>What is the expected output?</li>
+</ul>
+<p>&#x415;&#x441;&#x43B;&#x438; &#x432;&#x44B; &#x437;&#x430;&#x43A;&#x43E;&#x43D;&#x447;&#x438;&#x442;&#x435; &#x442;&#x435;&#x441;&#x442;, &#x43D;&#x435; &#x43E;&#x442;&#x432;&#x435;&#x447;&#x430;&#x44F; &#x43D;&#x430; &#x44D;&#x442;&#x438; &#x434;&#x432;&#x430; &#x432;&#x43E;&#x43F;&#x440;&#x43E;&#x441;&#x430;, &#x443; &#x432;&#x430;&#x441; &#x43D;&#x435;&#x442; &#x440;&#x435;&#x430;&#x43B;&#x44C;&#x43D;&#x43E;&#x433;&#x43E; &#x43C;&#x43E;&#x434;&#x443;&#x43B;&#x44C;&#x43D;&#x43E;&#x433;&#x43E; &#x442;&#x435;&#x441;&#x442;&#x430;. &#x423; &#x432;&#x430;&#x441; &#x431;&#x443;&#x434;&#x443;&#x442; &#x442;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; &#x43D;&#x435;&#x430;&#x43A;&#x43A;&#x443;&#x440;&#x430;&#x442;&#x43D;&#x44B;&#x435; &#x442;&#x435;&#x441;&#x442;&#x44B;.</p>
+</blockquote>
+<p>&#x41D;&#x430;&#x43C; &#x43D;&#x443;&#x436;&#x43D;&#x43E; &#x43F;&#x440;&#x43E;&#x441;&#x442;&#x43E; &#x447;&#x442;&#x43E;&#x431;&#x44B; &#x443;&#x431;&#x435;&#x434;&#x438;&#x442;&#x44C;&#x441;&#x44F;, &#x447;&#x442;&#x43E; &#x442;&#x430;&#x441;&#x43A; <code>fetchProducts</code> &#x432;&#x44B;&#x437;&#x44B;&#x432;&#x430;&#x435;&#x442; &#x441; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x435;&#x43C; yield &#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B;&#x44C;&#x43D;&#x443;&#x44E; &#x444;&#x443;&#x43D;&#x43A;&#x446;&#x438;&#x44E; &#x441; &#x43F;&#x440;&#x430;&#x432;&#x438;&#x43B;&#x44C;&#x43D;&#x44B;&#x43C; &#x43D;&#x430;&#x431;&#x43E;&#x440;&#x43E;&#x43C; &#x430;&#x440;&#x433;&#x443;&#x43C;&#x435;&#x43D;&#x442;&#x43E;&#x432;.</p>
+<p>&#x412;&#x43C;&#x435;&#x441;&#x442;&#x43E; &#x432;&#x44B;&#x437;&#x43E;&#x432;&#x430; &#x430;&#x441;&#x438;&#x43D;&#x445;&#x440;&#x43E;&#x43D;&#x43D;&#x43E;&#x439; &#x444;&#x443;&#x43D;&#x43A;&#x446;&#x438;&#x438; &#x43D;&#x435;&#x43F;&#x43E;&#x441;&#x440;&#x435;&#x434;&#x441;&#x442;&#x432;&#x435;&#x43D;&#x43D;&#x43E; &#x438;&#x437; &#x413;&#x435;&#x43D;&#x435;&#x440;&#x430;&#x442;&#x43E;&#x440;&#x430;, <strong>&#x43C;&#x44B; &#x43C;&#x43E;&#x436;&#x435;&#x43C; &#x432;&#x435;&#x440;&#x43D;&#x443;&#x442;&#x44C; &#x442;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; &#x43E;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x435; &#x432;&#x44B;&#x437;&#x43E;&#x432;&#x430; &#x444;&#x443;&#x43D;&#x43A;&#x446;&#x438;&#x438;.</strong> &#x442;. &#x435;. &#x43C;&#x44B; &#x43F;&#x440;&#x43E;&#x441;&#x442;&#x43E; &#x432;&#x435;&#x440;&#x43D;&#x435;&#x43C; &#x43E;&#x431;&#x44A;&#x435;&#x43A;&#x442;, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x439; &#x432;&#x44B;&#x433;&#x43B;&#x44F;&#x434;&#x438;&#x442; &#x441;&#x43B;&#x435;&#x434;&#x443;&#x44E;&#x449;&#x438;&#x43C; &#x43E;&#x431;&#x440;&#x430;&#x437;&#x43E;&#x43C;</p>
+<pre><code>// Effect -&gt; &#x432;&#x44B;&#x437;&#x44B;&#x432;&#x430;&#x435;&#x442; &#x444;&#x443;&#x43D;&#x43A;&#x446;&#x438;&#x44E; Api.fetch &#x441; &#x430;&#x440;&#x433;&#x443;&#x43C;&#x435;&#x43D;&#x442;&#x43E;&#x43C; `./products` 
+{
+  CALL: {
+    fn: Api.fetch,
+    args: [&apos;./products&apos;]
+  }
+}
+</code></pre><p>&#x418;&#x43D;&#x44B;&#x43C;&#x438; &#x441;&#x43B;&#x43E;&#x432;&#x430;&#x43C;&#x438;, &#x433;&#x435;&#x43D;&#x435;&#x440;&#x430;&#x442;&#x43E;&#x440; &#x431;&#x443;&#x434;&#x435;&#x442; &#x43E;&#x442;&#x434;&#x430;&#x432;&#x430;&#x442;&#x44C; &#x43F;&#x440;&#x43E;&#x441;&#x442;&#x44B;&#x435; &#x43E;&#x431;&#x44A;&#x435;&#x43A;&#x442;&#x44B;, &#x441;&#x43E;&#x434;&#x435;&#x440;&#x436;&#x430;&#x449;&#x438;&#x435; &#x438;&#x43D;&#x441;&#x442;&#x440;&#x443;&#x43A;&#x446;&#x438;&#x438; &#x438; middleware <code>redux-saga</code>   &#x431;&#x443;&#x434;&#x435;&#x442; &#x437;&#x430;&#x431;&#x43E;&#x442;&#x438;&#x442;&#x44C;&#x441;&#x44F; &#x43E; &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D;&#x438;&#x438; &#x44D;&#x442;&#x438;&#x445; &#x43F;&#x43E;&#x440;&#x443;&#x447;&#x435;&#x43D;&#x438;&#x439; &#x438; &#x440;&#x435;&#x437;&#x443;&#x43B;&#x44C;&#x442;&#x430;&#x442; &#x438;&#x445; &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x434;&#x43B;&#x44F; &#x433;&#x435;&#x43D;&#x435;&#x440;&#x430;&#x442;&#x43E;&#x440;&#x430;. &#x422;&#x430;&#x43A;&#x438;&#x43C; &#x43E;&#x431;&#x440;&#x430;&#x437;&#x43E;&#x43C;, &#x43F;&#x440;&#x438; &#x442;&#x435;&#x441;&#x442;&#x438;&#x440;&#x43E;&#x432;&#x430;&#x43D;&#x438;&#x438; &#x413;&#x435;&#x43D;&#x435;&#x440;&#x430;&#x442;&#x43E;&#x440;&#x430;, &#x432;&#x441;&#x435;, &#x447;&#x442;&#x43E; &#x43D;&#x430;&#x43C; &#x43D;&#x443;&#x436;&#x43D;&#x43E; &#x441;&#x434;&#x435;&#x43B;&#x430;&#x442;&#x44C;, &#x44D;&#x442;&#x43E; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x438;&#x442;&#x44C;, &#x447;&#x442;&#x43E; &#x43E;&#x43D; &#x43E;&#x442;&#x434;&#x430;&#x435;&#x442; &#x43E;&#x436;&#x438;&#x434;&#x430;&#x435;&#x43C;&#x443;&#x44E; &#x438;&#x43D;&#x441;&#x442;&#x440;&#x443;&#x43A;&#x446;&#x438;&#x44E;, &#x43F;&#x440;&#x43E;&#x441;&#x442;&#x43E; &#x432;&#x44B;&#x437;&#x44B;&#x432;&#x430;&#x44F; <code>deepEqual</code> &#x43D;&#x430; &#x434;&#x430;&#x43D;&#x43D;&#x43E;&#x43C; &#x43E;&#x431;&#x44A;&#x435;&#x43A;&#x442;&#x435;.</p>
+<p>&#x41F;&#x43E; &#x44D;&#x442;&#x43E;&#x439; &#x43F;&#x440;&#x438;&#x447;&#x438;&#x43D;&#x435; &#x431;&#x438;&#x431;&#x43B;&#x438;&#x43E;&#x442;&#x435;&#x43A;&#x430; &#x43F;&#x440;&#x435;&#x434;&#x43E;&#x441;&#x442;&#x430;&#x432;&#x43B;&#x44F;&#x435;&#x442; &#x434;&#x440;&#x443;&#x433;&#x43E;&#x439; &#x441;&#x43F;&#x43E;&#x441;&#x43E;&#x431; &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D;&#x438;&#x44F; &#x430;&#x441;&#x438;&#x43D;&#x445;&#x440;&#x43E;&#x43D;&#x43D;&#x44B;&#x445; &#x432;&#x44B;&#x437;&#x43E;&#x432;&#x43E;&#x432;.</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { call } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;redux-saga/effects&apos;</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">fetchProducts</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> products = <span class="hljs-keyword">yield</span> call(Api.fetch, <span class="hljs-string">&apos;/products&apos;</span>)
+  <span class="hljs-comment">// ...</span>
+}
+
+<span class="hljs-keyword">import</span> { call } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;redux-saga/effects&apos;</span>
+<span class="hljs-keyword">import</span> Api <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;...&apos;</span>
+
+<span class="hljs-keyword">const</span> iterator = fetchProducts()
+
+<span class="hljs-comment">// expects a call instruction</span>
+assert.deepEqual(
+  iterator.next().value,
+  call(Api.fetch, <span class="hljs-string">&apos;/products&apos;</span>),
+  <span class="hljs-string">&quot;fetchProducts should yield an Effect call(Api.fetch, &apos;./products&apos;)&quot;</span>
+)
+</code></pre>
+<p>&#x422;&#x435;&#x43F;&#x435;&#x440;&#x44C; &#x43C;&#x44B; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x43C; &#x444;&#x443;&#x43D;&#x43A;&#x446;&#x438;&#x44E; <code>call(fn, ...args)</code>. <strong>&#x41E;&#x442;&#x43B;&#x438;&#x447;&#x438;&#x435; &#x43E;&#x442; &#x43F;&#x440;&#x435;&#x434;&#x44B;&#x434;&#x443;&#x449;&#x435;&#x433;&#x43E; &#x43F;&#x440;&#x438;&#x43C;&#x435;&#x440;&#x430; &#x437;&#x430;&#x43A;&#x43B;&#x44E;&#x447;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x432; &#x442;&#x43E;&#x43C;, &#x447;&#x442;&#x43E; &#x442;&#x435;&#x43F;&#x435;&#x440;&#x44C; &#x43C;&#x44B; &#x43D;&#x435; &#x431;&#x443;&#x434;&#x435;&#x43C; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x430;&#x442;&#x44C; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x435; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x44F; </strong><code>fetch</code><strong> &#x441;&#x440;&#x430;&#x437;&#x443;, &#x432;&#x43C;&#x435;&#x441;&#x442;&#x43E; &#x44D;&#x442;&#x43E;&#x433;&#x43E; &#x43C;&#x44B; &#x432;&#x44B;&#x437;&#x43E;&#x432;&#x435;&#x43C; </strong><code>call</code><strong> &#x434;&#x43B;&#x44F; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x438;&#x44F; &#x43E;&#x43F;&#x438;&#x441;&#x430;&#x43D;&#x438;&#x44F; Effect-&#x430;. </strong></p>
+<p>&#x422;&#x430;&#x43A; &#x436;&#x435;, &#x43A;&#x430;&#x43A; &#x432; Redux &#x432;&#x44B; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x435;&#x442;&#x435; action creator &#x434;&#x43B;&#x44F; &#x441;&#x43E;&#x437;&#x434;&#x430;&#x43D;&#x438;&#x44F; &#x43F;&#x440;&#x43E;&#x441;&#x442;&#x43E;&#x433;&#x43E; &#x43E;&#x431;&#x44A;&#x435;&#x43A;&#x442;&#x430;, &#x43E;&#x43F;&#x438;&#x441;&#x44B;&#x432;&#x430;&#x44E;&#x449;&#x435;&#x433;&#x43E; &#x434;&#x435;&#x439;&#x441;&#x442;&#x432;&#x438;&#x435;, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x43E;&#x435; &#x431;&#x443;&#x434;&#x435;&#x442; &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x44F;&#x442;&#x44C;&#x441;&#x44F; Store, <code>call</code> &#x441;&#x43E;&#x437;&#x434;&#x430;&#x435;&#x442; &#x43F;&#x440;&#x43E;&#x441;&#x442;&#x43E;&#x439; &#x43E;&#x431;&#x44A;&#x435;&#x43A;&#x442;, &#x43E;&#x43F;&#x438;&#x441;&#x44B;&#x432;&#x430;&#x44E;&#x449;&#x438;&#x439; &#x432;&#x44B;&#x437;&#x43E;&#x432; &#x444;&#x443;&#x43D;&#x43A;&#x446;&#x438;&#x438;. Middleware &#x432; Redux-saga  &#x437;&#x430;&#x431;&#x43E;&#x442;&#x438;&#x442;&#x441;&#x44F; &#x43E; &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x435;&#x43D;&#x438;&#x438; &#x432;&#x44B;&#x437;&#x43E;&#x432;&#x430; &#x444;&#x443;&#x43D;&#x43A;&#x446;&#x438;&#x438; &#x438; &#x432;&#x43E;&#x437;&#x43E;&#x431;&#x43D;&#x43E;&#x432;&#x43B;&#x435;&#x43D;&#x438;&#x438; &#x440;&#x430;&#x431;&#x43E;&#x442;&#x44B; &#x433;&#x435;&#x43D;&#x435;&#x440;&#x430;&#x442;&#x43E;&#x440;&#x430; &#x441; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x44B;&#x43C; &#x43E;&#x442;&#x432;&#x435;&#x442;&#x43E;&#x43C;.</p>
+<p>&#x42D;&#x442;&#x43E; &#x43F;&#x43E;&#x437;&#x432;&#x43E;&#x43B;&#x44F;&#x435;&#x442; &#x43B;&#x435;&#x433;&#x43A;&#x43E; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x438;&#x442;&#x44C; &#x433;&#x435;&#x43D;&#x435;&#x440;&#x430;&#x442;&#x43E;&#x440; &#x432;&#x43D;&#x435; &#x441;&#x440;&#x435;&#x434;&#x44B; Redux-&#x430;. &#x41F;&#x43E;&#x442;&#x43E;&#x43C;&#x443; &#x447;&#x442;&#x43E; <code>call</code> &#x44D;&#x442;&#x43E; &#x43F;&#x440;&#x43E;&#x441;&#x442;&#x43E; &#x444;&#x443;&#x43D;&#x43A;&#x446;&#x438;&#x44F;, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x430;&#x44F; &#x432;&#x43E;&#x437;&#x432;&#x440;&#x430;&#x449;&#x430;&#x435;&#x442; &#x43F;&#x440;&#x43E;&#x441;&#x442;&#x43E;&#x439; &#x43E;&#x431;&#x44A;&#x435;&#x43A;&#x442;.</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { call } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;redux-saga/effects&apos;</span>
+<span class="hljs-keyword">import</span> Api <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;...&apos;</span>
+
+<span class="hljs-keyword">const</span> iterator = fetchProducts()
+
+<span class="hljs-comment">// &#x43E;&#x436;&#x438;&#x434;&#x430;&#x435;&#x442;&#x441;&#x44F; &#x432;&#x44B;&#x437;&#x43E;&#x432;</span>
+assert.deepEqual(
+  iterator.next().value,
+  call(Api.fetch, <span class="hljs-string">&apos;/products&apos;</span>),
+  <span class="hljs-string">&quot;fetchProducts should yield an Effect call(Api.fetch, &apos;./products&apos;)&quot;</span>
+)
+</code></pre>
+<p>&#x422;&#x435;&#x43F;&#x435;&#x440;&#x44C; &#x43D;&#x430;&#x43C; &#x43D;&#x435; &#x43D;&#x443;&#x436;&#x43D;&#x43E; &#x43C;&#x43E;&#x43A;&#x430;&#x442;&#x44C; &#x43A;&#x430;&#x43A;&#x438;&#x435;-&#x43B;&#x438;&#x431;&#x43E; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x435; &#x438;  &#x43D;&#x430;&#x43C; &#x434;&#x43E;&#x441;&#x442;&#x430;&#x442;&#x43E;&#x447;&#x43D;&#x43E; &#x43F;&#x440;&#x43E;&#x441;&#x442;&#x43E;&#x439; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x43A;&#x438; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x43D;&#x44B;&#x445; &#x434;&#x430;&#x43D;&#x43D;&#x44B;&#x445; &#x43D;&#x430; &#x440;&#x430;&#x432;&#x435;&#x43D;&#x441;&#x442;&#x432;&#x43E;.</p>
+<p>&#x41F;&#x440;&#x435;&#x438;&#x43C;&#x443;&#x449;&#x435;&#x441;&#x442;&#x432;&#x43E; &#x44D;&#x442;&#x438;&#x445; <em>&#x434;&#x435;&#x43A;&#x43B;&#x430;&#x440;&#x430;&#x442;&#x438;&#x432;&#x43D;&#x44B;&#x445; &#x432;&#x44B;&#x437;&#x43E;&#x432;&#x43E;&#x432;</em> &#x441;&#x43E;&#x441;&#x442;&#x43E;&#x438;&#x442; &#x432; &#x442;&#x43E;&#x43C;, &#x447;&#x442;&#x43E; &#x43C;&#x44B; &#x43C;&#x43E;&#x436;&#x435;&#x43C; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x438;&#x442;&#x44C; &#x432;&#x441;&#x44E; &#x43B;&#x43E;&#x433;&#x438;&#x43A;&#x443; &#x432;&#x43D;&#x443;&#x442;&#x440;&#x438; &#x441;&#x430;&#x433;&#x438;, &#x43F;&#x440;&#x43E;&#x441;&#x442;&#x43E; &#x43F;&#x440;&#x43E;&#x432;&#x43E;&#x434;&#x44F; &#x438;&#x442;&#x435;&#x440;&#x430;&#x446;&#x438;&#x44E; &#x433;&#x435;&#x43D;&#x435;&#x440;&#x430;&#x442;&#x43E;&#x440;&#x430; &#x438; &#x432;&#x44B;&#x43F;&#x43E;&#x43B;&#x43D;&#x44F;&#x44F;  <code>deepEqual</code> &#x441; &#x437;&#x43D;&#x430;&#x447;&#x435;&#x43D;&#x438;&#x435;&#x43C; &#x43F;&#x43E;&#x43B;&#x443;&#x447;&#x435;&#x43D;&#x43D;&#x44B;&#x43C;  &#x43F;&#x43E;&#x441;&#x43B;&#x435;&#x434;&#x43E;&#x432;&#x430;&#x442;&#x435;&#x43B;&#x44C;&#x43D;&#x43E; &#x438;&#x437; &#x433;&#x435;&#x43D;&#x435;&#x440;&#x430;&#x442;&#x43E;&#x440;&#x430;. &#x42D;&#x442;&#x43E; &#x440;&#x435;&#x430;&#x43B;&#x44C;&#x43D;&#x430;&#x44F; &#x432;&#x44B;&#x433;&#x43E;&#x434;&#x430;, &#x442;&#x430;&#x43A; &#x43A;&#x430;&#x43A; &#x432;&#x430;&#x448;&#x438; &#x441;&#x43B;&#x43E;&#x436;&#x43D;&#x44B;&#x435; &#x430;&#x441;&#x438;&#x43D;&#x445;&#x440;&#x43E;&#x43D;&#x43D;&#x44B;&#x435; &#x43E;&#x43F;&#x435;&#x440;&#x430;&#x446;&#x438;&#x438; &#x431;&#x43E;&#x43B;&#x44C;&#x448;&#x435; &#x43D;&#x435; &#x44F;&#x432;&#x43B;&#x44F;&#x44E;&#x442;&#x441;&#x44F;  &#x447;&#x435;&#x440;&#x43D;&#x44B;&#x43C;&#x438; &#x44F;&#x449;&#x438;&#x43A;&#x430;&#x43C;&#x438;, &#x438; &#x432;&#x44B; &#x43C;&#x43E;&#x436;&#x435;&#x442;&#x435; &#x434;&#x435;&#x442;&#x430;&#x43B;&#x44C;&#x43D;&#x43E; &#x43F;&#x440;&#x43E;&#x432;&#x435;&#x440;&#x438;&#x442;&#x44C; &#x438;&#x445; &#x43B;&#x43E;&#x433;&#x438;&#x43A;&#x443; &#x43D;&#x435;&#x437;&#x430;&#x432;&#x438;&#x441;&#x438;&#x43C;&#x43E; &#x43E;&#x442; &#x442;&#x43E;&#x433;&#x43E;, &#x43D;&#x430;&#x441;&#x43A;&#x43E;&#x43B;&#x44C;&#x43A;&#x43E; &#x43E;&#x43D;&#x430; &#x441;&#x43B;&#x43E;&#x436;&#x43D;&#x430;.</p>
+<p><code>call</code> &#x442;&#x430;&#x43A;&#x436;&#x435; &#x43F;&#x43E;&#x434;&#x434;&#x435;&#x440;&#x436;&#x438;&#x432;&#x430;&#x435;&#x442; &#x432;&#x44B;&#x437;&#x43E;&#x432; &#x43E;&#x431;&#x44A;&#x435;&#x43A;&#x442;&#x43D;&#x44B;&#x445; &#x43C;&#x435;&#x442;&#x43E;&#x434;&#x43E;&#x432;, &#x432;&#x44B; &#x43C;&#x43E;&#x436;&#x435;&#x442;&#x435; &#x43F;&#x440;&#x435;&#x434;&#x441;&#x442;&#x430;&#x432;&#x438;&#x442;&#x44C; <code>this</code> &#x432; &#x43A;&#x43E;&#x43D;&#x442;&#x435;&#x43A;&#x441;&#x442;&#x435; &#x432;&#x44B;&#x437;&#x44B;&#x432;&#x430;&#x435;&#x43C;&#x43E;&#x439; &#x444;&#x443;&#x43D;&#x43A;&#x446;&#x438;&#x438;, &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x443;&#x44F; &#x441;&#x43B;&#x435;&#x434;&#x443;&#x44E;&#x449;&#x443;&#x44E; &#x444;&#x43E;&#x440;&#x43C;&#x443;:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">yield</span> call([obj, obj.method], arg1, arg2, ...) <span class="hljs-comment">// as if we did obj.method(arg1, arg2 ...)</span>
+</code></pre>
+<p><code>apply</code>&#x44F;&#x432;&#x43B;&#x44F;&#x435;&#x442;&#x441;&#x44F; &#x430;&#x43B;&#x438;&#x430;&#x441;&#x43E;&#x43C; &#x434;&#x43B;&#x44F; &#x444;&#x43E;&#x440;&#x43C;&#x44B; &#x432;&#x44B;&#x437;&#x43E;&#x432;&#x430; &#x43C;&#x435;&#x442;&#x43E;&#x434;&#x430;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">yield</span> apply(obj, obj.method, [arg1, arg2, ...])
+</code></pre>
+<p><code>call</code> &#x438; <code>apply</code> &#x445;&#x43E;&#x440;&#x43E;&#x448;&#x43E; &#x43F;&#x43E;&#x434;&#x445;&#x43E;&#x434;&#x44F;&#x442; &#x434;&#x43B;&#x44F; &#x444;&#x443;&#x43D;&#x43A;&#x446;&#x438;&#x439;, &#x43A;&#x43E;&#x442;&#x43E;&#x440;&#x44B;&#x435; &#x432;&#x43E;&#x437;&#x432;&#x440;&#x430;&#x449;&#x430;&#x44E;&#x442; &#x440;&#x435;&#x437;&#x443;&#x43B;&#x44C;&#x442;&#x430;&#x442;&#x44B; &#x432; &#x432;&#x438;&#x434;&#x435; Promise.</p>
+<p>&#x414;&#x440;&#x443;&#x433;&#x430;&#x44F; &#x444;&#x443;&#x43D;&#x43A;&#x446;&#x438;&#x44F; <code>cps</code> &#x43C;&#x43E;&#x436;&#x435;&#x442; &#x438;&#x441;&#x43F;&#x43E;&#x43B;&#x44C;&#x437;&#x43E;&#x432;&#x430;&#x442;&#x44C;&#x441;&#x44F; &#x434;&#x43B;&#x44F; &#x43E;&#x431;&#x440;&#x430;&#x431;&#x43E;&#x442;&#x43A;&#x438; &#x444;&#x443;&#x43D;&#x43A;&#x446;&#x438;&#x439; &#x432; &#x441;&#x442;&#x438;&#x43B;&#x435; Node (&#x43D;&#x430;&#x43F;&#x440;&#x438;&#x43C;&#x435;&#x440;,<code>fn(...args, callback)</code>, &#x433;&#x434;&#x435; <code>callback</code> &#x438;&#x43C;&#x435;&#x435;&#x442; &#x432;&#x438;&#x434; <code>(error, result) =&gt; ()</code>).</p>
+<p>&#x41F;&#x440;&#x438;&#x43C;&#x435;&#x440;:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { cps } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;redux-saga/effects&apos;</span>
+
+<span class="hljs-keyword">const</span> content = <span class="hljs-keyword">yield</span> cps(readFile, <span class="hljs-string">&apos;/path/to/file&apos;</span>)
+</code></pre>
+<p>&#x418;, &#x43A;&#x43E;&#x43D;&#x435;&#x447;&#x43D;&#x43E;, &#x432;&#x44B; &#x43C;&#x43E;&#x436;&#x435;&#x442;&#x435; &#x43D;&#x430;&#x43F;&#x438;&#x441;&#x430;&#x442;&#x44C; &#x442;&#x435;&#x441;&#x442; &#x434;&#x43B;&#x44F; &#x43D;&#x435;&#x433;&#x43E; &#x442;&#x430;&#x43A;&#x436;&#x435; &#x436;&#x435;, &#x43A;&#x430;&#x43A; &#x431;&#x44B; &#x432;&#x44B; &#x43D;&#x430;&#x43F;&#x438;&#x441;&#x430;&#x43B;&#x438; &#x434;&#x43B;&#x44F;  <code>call</code>:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { cps } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;redux-saga/effects&apos;</span>
+
+<span class="hljs-keyword">const</span> iterator = fetchSaga()
+assert.deepEqual(iterator.next().value, cps(readFile, <span class="hljs-string">&apos;/path/to/file&apos;</span>) )
+</code></pre>
+<p><code>cps</code> &#x442;&#x430;&#x43A;&#x436;&#x435; &#x43F;&#x43E;&#x434;&#x434;&#x435;&#x440;&#x436;&#x438;&#x432;&#x430;&#x435;&#x442; &#x442;&#x443; &#x436;&#x435; &#x444;&#x43E;&#x440;&#x43C;&#x443; &#x432;&#x44B;&#x437;&#x43E;&#x432;&#x430; &#x43C;&#x435;&#x442;&#x43E;&#x434;&#x430;, &#x447;&#x442;&#x43E; &#x438;<code>call</code>.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="bazovie-ponyatiya/11-ispolzovanie-saga-helpers.html" class="navigation navigation-prev " aria-label="Previous page: 2.1 Использование Saga Helpers">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="bazovie-ponyatiya/23-dispatchim-action-v-store.html" class="navigation navigation-next " aria-label="Next page: 2.3 Диспатчим action в Store">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"2.2 Декларативные эффекты","level":"1.2.2","depth":2,"next":{"title":"2.3 Диспатчим action в Store","level":"1.2.3","depth":2,"path":"bazovie-ponyatiya/23-dispatchim-action-v-store.md","ref":"bazovie-ponyatiya/23-dispatchim-action-v-store.md","articles":[]},"previous":{"title":"2.1 Использование Saga Helpers","level":"1.2.1","depth":2,"path":"bazovie-ponyatiya/11-ispolzovanie-saga-helpers.md","ref":"bazovie-ponyatiya/11-ispolzovanie-saga-helpers.md","articles":[]},"dir":"ltr"},"config":{"plugins":["comment"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"comment":{"highlightCommented":true},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"nfpk","pdf":{"pageNumbers":true,"fontSize":16,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Redux-Saga Manual Ru","language":"ru","links":{"sidebar":{"Redux-Saga Manual Ru":"https://www.gitbook.com/book/nfpk/redux-saga-ru"},"gitbook":true},"gitbook":"*","description":""},"file":{"path":"12-deklarativnie-effekti.md","mtime":"2017-11-16T13:08:51.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-16T13:09:34.655Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-comment/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

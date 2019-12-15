@@ -1,0 +1,453 @@
+
+<!DOCTYPE HTML>
+<html lang="ru" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>3. Дополнительные концепции · Redux-Saga Manual Ru</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="nfpk">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-comment/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="31.html" />
+    
+    
+    <link rel="prev" href="bazovie-ponyatiya/24-a-common-abstraction-effect.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Введите условия поиска" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://www.gitbook.com/book/nfpk/redux-saga-ru" target="_blank" class="custom-link">Redux-Saga Manual Ru</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    1. Вступление
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="bazovie-ponyatiya.html">
+            
+                <a href="bazovie-ponyatiya.html">
+            
+                    
+                    2. Базовые Понятия
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="bazovie-ponyatiya/11-ispolzovanie-saga-helpers.html">
+            
+                <a href="bazovie-ponyatiya/11-ispolzovanie-saga-helpers.html">
+            
+                    
+                    2.1 Использование Saga Helpers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="12-deklarativnie-effekti.html">
+            
+                <a href="12-deklarativnie-effekti.html">
+            
+                    
+                    2.2 Декларативные эффекты
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="bazovie-ponyatiya/23-dispatchim-action-v-store.html">
+            
+                <a href="bazovie-ponyatiya/23-dispatchim-action-v-store.html">
+            
+                    
+                    2.3 Диспатчим action в Store
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="bazovie-ponyatiya/24-error-handling.html">
+            
+                <a href="bazovie-ponyatiya/24-error-handling.html">
+            
+                    
+                    2.4 Обработка ошибок
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="bazovie-ponyatiya/24-a-common-abstraction-effect.html">
+            
+                <a href="bazovie-ponyatiya/24-a-common-abstraction-effect.html">
+            
+                    
+                    2.5 Базовая абстракция: Effect
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="1.html">
+            
+                <a href="1.html">
+            
+                    
+                    3. Дополнительные концепции
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="31.html">
+            
+                <a href="31.html">
+            
+                    
+                    3.1 Получение будущих действий
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="32-ne-blokiruyuschie-vizovi.html">
+            
+                <a href="32-ne-blokiruyuschie-vizovi.html">
+            
+                    
+                    3.2 Не блокирующие вызовы
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="33-running-tasks-in-parallel.html">
+            
+                <a href="33-running-tasks-in-parallel.html">
+            
+                    
+                    3.3 Запуск тасков параллельно
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="34-zapusk-gonki-mezhdu-neskolkimi-effect-ami.html">
+            
+                <a href="34-zapusk-gonki-mezhdu-neskolkimi-effect-ami.html">
+            
+                    
+                    3.4 Запуск гонки между несколькими Effect-ами
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="sequencing-sagas-via-yield.html">
+            
+                <a href="sequencing-sagas-via-yield.html">
+            
+                    
+                    3.5 Последовательность Saga через yield*
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="36.html">
+            
+                <a href="36.html">
+            
+                    
+                    3.6 Составление Saga-ов
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="310-primeri-testirovaniya-sagas.html">
+            
+                <a href="310-primeri-testirovaniya-sagas.html">
+            
+                    
+                    3.10 Примеры тестирования Saga-ов
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="311-podklyuchenie-sagas-k-vneshnemu-vhoduvihodu.html">
+            
+                <a href="311-podklyuchenie-sagas-k-vneshnemu-vhoduvihodu.html">
+            
+                    
+                    3.11 Подключение Saga-ов к внешнему входу/выходу
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Опубликовано с помощью GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >3. Дополнительные концепции</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="bazovie-ponyatiya/24-a-common-abstraction-effect.html" class="navigation navigation-prev " aria-label="Previous page: 2.5 Базовая абстракция: Effect">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="31.html" class="navigation navigation-next " aria-label="Next page: 3.1 Получение будущих действий">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"3. Дополнительные концепции","level":"1.3","depth":1,"next":{"title":"3.1 Получение будущих действий","level":"1.3.1","depth":2,"path":"31.md","ref":"31.md","articles":[]},"previous":{"title":"2.5 Базовая абстракция: Effect","level":"1.2.5","depth":2,"path":"bazovie-ponyatiya/24-a-common-abstraction-effect.md","ref":"bazovie-ponyatiya/24-a-common-abstraction-effect.md","articles":[]},"dir":"neutral"},"config":{"plugins":["comment"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"comment":{"highlightCommented":true},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"nfpk","pdf":{"pageNumbers":true,"fontSize":16,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Redux-Saga Manual Ru","language":"ru","links":{"sidebar":{"Redux-Saga Manual Ru":"https://www.gitbook.com/book/nfpk/redux-saga-ru"},"gitbook":true},"gitbook":"*","description":""},"file":{"path":"1.md","mtime":"2017-11-16T13:08:51.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-11-16T13:09:34.655Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-comment/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
