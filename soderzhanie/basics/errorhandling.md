@@ -1,10 +1,10 @@
 # 2.4 Обработка ошибок
 
-In this section we'll see how to handle the failure case from the previous example. Let's suppose that our API function `Api.fetch` returns a Promise which gets rejected when the remote fetch fails for some reason.
+В этом разделен мы увидим как обрабатывать случай отказа из предывдущего примера. Давайте предположим что наша функция API `Api.fetch` возвращает Promise который прероеходит в состояние rejected когда удаленный fetch терпит неудачу по какой-то причине.
 
-We want to handle those errors inside our Saga by dispatching a `PRODUCTS_REQUEST_FAILED` action to the Store.
+Мы хотим обработать эти ошибки внутри нашей Саги отправляя `PRODUCTS_REQUEST_FAILED` action в Store.
 
-We can catch errors inside the Saga using the familiar `try/catch` syntax.
+Мы можем ловить ошибки внутри саги, используя знакомый `try/catch` синтакс.
 
 ```javascript
 import Api from './path/to/api'
@@ -23,7 +23,7 @@ function* fetchProducts() {
 }
 ```
 
-In order to test the failure case, we'll use the `throw` method of the Generator
+Для того, чтобы проверить случай отказа, мы будем использовать метод `throw` Генератора
 
 ```javascript
 import { call, put } from 'redux-saga/effects'
@@ -49,9 +49,9 @@ assert.deepEqual(
 )
 ```
 
-In this case, we're passing the `throw` method a fake error. This will cause the Generator to break the current flow and execute the catch block.
+В этом случае мы передаем методу `throw` ложную ошибку. Это приведет к тому что Генератор прервет текущий поток и запустит блок catch.
 
-Of course, you're not forced to handle your API errors inside `try`/`catch` blocks. You can also make your API service return a normal value with some error flag on it. For example, you can catch Promise rejections and map them to an object with an error field.
+Конечно, вас не заставляют обрабатывать шибки вашего API внутри блоков `try`/`catch`. Вы можете также сделать ваш API сервис возвращающим нормальное значение с каким-то флагом ошибки внутри него. Например, вы можете ловить Promise rejections and отображать их на объект с полем ошибки.
 
 ```javascript
 import Api from './path/to/api'

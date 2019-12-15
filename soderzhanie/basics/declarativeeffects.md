@@ -1,6 +1,6 @@
 # 2.2 Декларативные эффекты
 
-In `redux-saga`, Sagas are implemented using Generator functions. To express the Saga logic, we yield plain JavaScript Objects from the Generator. We call those Objects [_Effects_](https://redux-saga.js.org/docs/api/#effect-creators). An Effect is an object that contains some information to be interpreted by the middleware. You can view Effects like instructions to the middleware to perform some operation \(e.g., invoke some asynchronous function, dispatch an action to the store, etc.\).
+В `redux-saga`, саги реализованы с использованием функций Генераторов. To express the Saga logic, we yield plain JavaScript Objects from the Generator. We call those Objects [_Effects_](https://redux-saga.js.org/docs/api/#effect-creators). An Effect is an object that contains some information to be interpreted by the middleware. You can view Effects like instructions to the middleware to perform some operation \(e.g., invoke some asynchronous function, dispatch an action to the store, etc.\).
 
 To create Effects, you use the functions provided by the library in the `redux-saga/effects` package.
 

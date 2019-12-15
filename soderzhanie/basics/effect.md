@@ -1,10 +1,10 @@
 # 2.5 Распространёная абстракция: Эффект
 
-To generalize, triggering Side Effects from inside a Saga is always done by yielding some declarative Effect. \(You can also yield Promise directly, but this will make testing difficult as we saw in the first section.\)
+В целом, запуск Side Effect-ов изнутри Саги всега делаеться by yielding какой-то декларативный Эффект. \(ВЫ так же можете yield Promise непостедственно, но сделает тестирование сложным как мы видили в первом разделе.\)
 
-What a Saga does is actually compose all those Effects together to implement the desired control flow. The most basic example is to sequence yielded Effects by putting the yields one after another. You can also use the familiar control flow operators \(`if`, `while`, `for`\) to implement more sophisticated control flows.
+Что Сага делает это на самом деле составляет все эти Эффекты вместе для реализации желаемого потока управления. Наиболее общий пример это последовательность Эффектов с yield добавляя yield-ы один за другим. Вы можете также исспользовать знакомые опереторы управления потоком \(`if`, `while`, `for`\) для реализации более сложных потоков управления.
 
-We saw that using Effects like `call` and `put`, combined with high-level APIs like `takeEvery` allows us to achieve the same things as `redux-thunk`, but with the added benefit of easy testability.
+Мы видили что исспользование таких Эффектов как `call` и `put`, вместе с высоко-уровневыми API такими как `takeEvery` позволяет нам достигать тех же вещей что и `redux-thunk`, на с дополнительным преимуществом в виде легкости тестирования.
 
-But `redux-saga` provides another advantage over `redux-thunk`. In the Advanced section you'll encounter some more powerful Effects that let you express complex control flows while still allowing the same testability benefit.
+Но `redux-saga` предоставляет и другое перимущество над `redux-thunk`. В Продвинутом разделе вы столкнетесь с более мощьными Эффектами которые позволят вам выразить сложные потоки управления и в тоже время позволят иметь те же преимущества при тестировании.
 

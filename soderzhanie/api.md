@@ -75,9 +75,9 @@
 
 #### `createSagaMiddleware(options)`
 
-Creates a Redux middleware and connects the Sagas to the Redux Store
+Создает Redux мидлвар (middleware) и соединяет Саги с Redux Store
 
-* `options: Object` - A list of options to pass to the middleware. Currently supported options are:
+* `options: Object` - Список параметров для передачи в мидлвар (middleware). В настоящее время поддерживаются следующие варианты::
   * `sagaMonitor` : [SagaMonitor](api.md#sagamonitor) - If a Saga Monitor is provided, the middleware will deliver monitoring events to the monitor.
   * `emitter` : Used to feed actions from redux to redux-saga \(through redux middleware\). Emitter is a higher order function, which takes a builtin emitter and returns another emitter.
 
